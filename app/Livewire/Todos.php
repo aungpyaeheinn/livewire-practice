@@ -17,9 +17,10 @@ class Todos extends Component
         $this->todo = null;
     }
 
-    public function remove($todos)
+    public function remove($index)
     {
-        $this->remove($todos);
+        unset($this->todos[$index]);
+        $this->todos = array_values($this->todos);
     }
 
     public function render()
