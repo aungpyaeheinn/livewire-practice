@@ -1,4 +1,5 @@
 <div class="todo-app">
+
     <style>
         .todo-app {
             max-width: 420px;
@@ -68,6 +69,11 @@
             color: #333;
         }
 
+        .todo-text strong {
+            margin-right: 6px;
+            color: #6b7280;
+        }
+
         .delete-btn {
             background: transparent;
             border: none;
@@ -79,12 +85,9 @@
         .delete-btn:hover {
             color: #b91c1c;
         }
-
-        .todo-text strong {
-            margin-right: 6px;
-            color: #6b7280;
-        }
+        
     </style>
+
     <h2>📝 Todo List</h2>
 
     <form wire:submit.prevent="add" class="todo-form">
