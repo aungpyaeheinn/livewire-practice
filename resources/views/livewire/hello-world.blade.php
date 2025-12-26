@@ -5,4 +5,7 @@
 
     <br>
     <br>
+    <div>
+        this is hello world component.
+    </div>
 </div>
