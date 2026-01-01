@@ -7,17 +7,17 @@
 
     <title>{{ $title ?? 'Home Page' }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-</head>
+    <link rel="stylesheet" href="app.css">
 @livewireStyles
 </head>
 
 <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/hello-world" @class(['active' => request()->is('/hello-world')])>HelloWorld</a>
-        <a href="/todos" @class(['active' => request()->is('/todos')])>Todos</a>
-        <a href="/counter" @class(['active' => request()->is('/counter')])>Counter</a>
+        <a href="/" @class(['active' => request()->is('/')])>Home</a>
+        <a href="/hello-world" @class(['active' => request()->is('hello-world')])>HelloWorld</a>
+        <a href="/todos" @class(['active' => request()->is('todos')])>Todos</a>
+        <a href="/counter" @class(['active' => request()->is('counter')])>Counter</a>
+        <a href="/calculator" @class(['active' => request()->is('calculator')])>Calculator</a>
     </nav>
 
     {{ $slot }}
