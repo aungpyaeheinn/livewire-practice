@@ -1,4 +1,14 @@
-.active {
-    color: red;
-    font-weight: bold;
+@import "tailwindcss";
+
+/* This enables the manual .dark class toggle in v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* v4 variables go here */
+}
+
+@layer components {
+    .active {
+        @apply text-red-600 font-bold;
+    }
 }

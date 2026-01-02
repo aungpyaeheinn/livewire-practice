@@ -6,11 +6,36 @@ use Livewire\Component;
 
 class Calculator extends Component
 {
-    public int $firstNumber, $secondNumber, $result;
+    public int $firstNumber = 0;
+    public int $secondNumber = 0;
+    public string $operator = '+';
+    public $result = null;
 
-    public function plus()
+    // Called when any property updates (reactive)
+    public function updated($propertyName)
     {
-        $this->result = $this->firstNumber + $this->secondNumber;
+        $this->calculate();
+    }
+
+    // Main calculation method (can also be called by submit button)
+    public function calculate()
+    {
+        switch ($this->operator) {
+            case '+':
+                $this->result = $this->firstNumber + $this->secondNumber;
+                break;
+            case '-':
+                $this->result = $this->firstNumber - $this->secondNumber;
+                break;
+            case '*':
+                $this->result = $this->firstNumber * $this->secondNumber;
+                break;
+            case '/':
+                $this->result = $this->secondNumber != 0
+                    ? $this->firstNumber / $this->secondNumber
+                    : 'Cannot divide by zero';
+                break;
+        }
     }
 
     public function render()
