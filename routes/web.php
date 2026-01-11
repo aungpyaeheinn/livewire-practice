@@ -1,22 +1,25 @@
 <?php
 
-use App\Livewire\Todos;
-use App\Livewire\Search;
-use App\Livewire\Counter;
-use App\Livewire\Greeter;
-use App\Livewire\Welcome;
-use App\Livewire\Calculator;
-use App\Livewire\HelloWorld;
+use App\Livewire\{
+    Welcome,
+    HelloWorld,
+    Todos,
+    Counter,
+    Calculator,
+    Search
+};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Welcome::class);
 
-Route::get('/hello-world', HelloWorld::class);
+$routes = [
+    '/hello-world' => HelloWorld::class,
+    '/todos'       => Todos::class,
+    '/counter'     => Counter::class,
+    '/calculator'  => Calculator::class,
+    '/search'      => Search::class,
+];
 
-Route::get('/todos', Todos::class);
-
-Route::get('/counter', Counter::class);
-
-Route::get('/calculator', Calculator::class);
-
-Route::get('/search', Search::class);
+foreach ($routes as $uri => $component) {
+    Route::get($uri, $component);
+}
