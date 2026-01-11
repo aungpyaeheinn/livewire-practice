@@ -1,10 +1,11 @@
 <?php
 
-use App\Livewire\Calculator;
 use App\Livewire\Todos;
+use App\Livewire\Search;
 use App\Livewire\Counter;
 use App\Livewire\Greeter;
 use App\Livewire\Welcome;
+use App\Livewire\Calculator;
 use App\Livewire\HelloWorld;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,4 @@ Route::get('/counter', Counter::class);
 
 Route::get('/calculator', Calculator::class);
 
+Route::get('/search', Search::class);
