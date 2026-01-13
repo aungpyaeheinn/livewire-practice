@@ -6,9 +6,28 @@ use Livewire\Component;
 
 class Search extends Component
 {
+    public string $query = '';
+
+    public array $items = [
+        'Laravel',
+        'Livewire',
+        'Alpine.js',
+        'React',
+        'Vue',
+        'Tailwind',
+        'PHP',
+    ];
 
     public function render()
     {
-        return view('livewire.search');
+        $results = collect($this->items)
+            ->filter(
+                fn($item) =>
+                str_contains(strtolower($item), strtolower($this->query))
+            );
+
+        return view('livewire.search', [
+            'results' => $results,
+        ]);
     }
 }

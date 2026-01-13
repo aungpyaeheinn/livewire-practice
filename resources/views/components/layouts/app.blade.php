@@ -28,6 +28,7 @@
         <a href="/todos" @class(['active' => request()->is('todos')])>Todos</a>
         <a href="/counter" @class(['active' => request()->is('counter')])>Counter</a>
         <a href="/calculator" @class(['active' => request()->is('calculator')])>Calculator</a>
+        <a href="/search" @class(['active' => request()->is('search')])>Search</a>
 
         <button id="theme-toggle" class="px-3 py-1 border rounded flex items-center gap-2 cursor-pointer">
             <i class="fas fa-moon"></i>
